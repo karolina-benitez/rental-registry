@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import NewRegistryButton from '../components/NewRegistryButton';
+import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import NewFormButton from './NewFormButton';
+import AboutButton from './AboutButton';
 
 export class Home extends Component {
   render() {
@@ -13,16 +14,20 @@ export class Home extends Component {
           <hr />
           <p className="homepage-body">
             <span>Welcome! If you are a landlord that owns five or more</span>
-            <span>dwelling units, then you are required to submit a rental</span>
+            <span>
+              dwelling units, then you are required to submit a rental
+            </span>
             <span>registry form for all of your properties.</span>
           </p>
-
-          <NewRegistryButton />
-
+          <div>
+            <NewFormButton />
+          </div>
+          <br></br>
+          <AboutButton />
         </div>
         <Footer />
       </div>
-    )
+    );
   }
 }
 
