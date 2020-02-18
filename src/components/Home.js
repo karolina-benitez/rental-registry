@@ -1,10 +1,12 @@
+import {inject, observer} from 'mobx-react';
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import NewFormButton from './NewFormButton';
 import AboutButton from './AboutButton';
 
-export class Home extends Component {
+
+const Home = inject('store')(observer(class Home extends Component {
   render() {
     return (
       <div class="wrapper">
@@ -29,6 +31,6 @@ export class Home extends Component {
       </div>
     );
   }
-}
+}));
 
 export default Home;
