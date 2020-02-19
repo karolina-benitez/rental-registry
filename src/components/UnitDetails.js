@@ -1,10 +1,12 @@
+import {inject, observer} from 'mobx-react';
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap';
 import Header from './Header';
 import Footer from './Footer';
 
 
-export class UnitDetails extends Component {
+const UnitDetails = inject('store')(observer(class UnitDetails extends Component {
+
   saveAndContinue = (e) => {
     e.preventDefault()
     this.props.nextStep()
@@ -30,6 +32,6 @@ export class UnitDetails extends Component {
       </React.Fragment>
     )
   }
-}
+}));
 
 export default UnitDetails

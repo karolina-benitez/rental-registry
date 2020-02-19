@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import {inject, observer} from 'mobx-react';
+import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
 import Header from './Header';
 import Footer from './Footer';
 
 
-export class PropertyDetails extends Component {
-
+const PropertyDetails = inject('store')(observer(class PropertyDetails extends Component {
 
   saveAndContinue = (e) => {
     e.preventDefault()
@@ -75,6 +75,6 @@ export class PropertyDetails extends Component {
       </React.Fragment>     
     )
   }
-}
+}));
 
 export default PropertyDetails
